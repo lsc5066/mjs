@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>강 건너기 퍼즐</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            position: relative;
+        }
+        
+        .bank {
+            width: 200px;
+            height: 300px;
+            background-color: #90EE90;
+            padding: 20px;
+            border: 2px solid #006400;
+        }
+        
+        .river {
+            width: 300px;
+            height: 300px;
+            background-color: #87CEEB;
+            margin: 0 20px;
+        }
+        
+        .item {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .boat {
+            width: 100px;
+            height: 60px;
+            background-color: #8B4513;
+            position: absolute;
+            bottom: 120px;
+            transition: left 1s;
+        }
+        
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .message {
+            text-align: center;
+            color: red;
+            margin: 10px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="message" id="message"></div>
+    <div class="container">
+        <div class="bank" id="leftBank">
+            <img src="farmer.png" class="item" id="farmer" alt="농부">
+            <img src="wolf.png" class="item" id="wolf" alt="늑대">
+            <img src="goat.png" class="item" id="goat" alt="염소">
+            <img src="cabbage.png" class="item" id="cabbage" alt="양배추">
+        </div>
+        <div class="river">
+            <div class="boat" id="boat"></div>
+        </div>
+        <div class="bank" id="rightBank"></div>
+    </div>
+    <div class="controls">
+        <button onclick="moveSelected()">이동하기</button>
+        <button onclick="resetGame()">다시하기</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 
